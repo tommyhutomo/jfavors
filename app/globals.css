@@ -110,3 +110,17 @@ section.reveal .card:nth-child(6) { animation-delay: 0.6s; animation: scaleIn 0.
   animation: fadeInUp 0.6s ease-out 0.2s forwards;
   opacity: 0;
 }
+/* Admin pages styling */
+@supports selector(::-webkit-scrollbar) {
+  #__next {
+    background: var(--bg);
+    color: var(--fg);
+    background-image: radial-gradient(3000px 1800px at 15% -20%, #FFFDD0 0%, transparent 70%),
+      radial-gradient(2800px 1600px at 110% -10%, #E3E4FA 0%, transparent 65%),
+      radial-gradient(2600px 1600px at -15% 120%, #FDD5B1 0%, transparent 70%),
+      radial-gradient(2700px 1600px at 120% 110%, #AAF0D1 0%, transparent 75%),
+      radial-gradient(3500px 2000px at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 80%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+}
