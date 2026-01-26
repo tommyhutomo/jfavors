@@ -1,0 +1,39 @@
+
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Webpack (if applicable)
+dist/
+build/
+public/build/
+public/dist/
+.cache/
+node_modules/.cache/
+node_modules/.cache/webpack/
+webpack-cache/
+webpack-assets.json
+stats.json
+
+# Env
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/ 
+*.suo
+*.ntvs*

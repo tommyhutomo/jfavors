@@ -1,0 +1,36 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "brand": "JFavors",
+    "title": "Events that feel effortless and look unforgettable.",
+    "titleHighlight": "effortless",
+    "description": "From concept to execution—corporate events, exhibitions, product launches, team building, and large-scale activations.",
+    "cta1": "Get a Quote",
+    "cta2": "Know More"
+  },
+  "features": {
+    "title": "Why choose us",
+    "knowMore": "Know More"
+  },
+  "services": {
+    "title": "Services",
+    "knowMore": "Know More"
+  },
+  "portfolio": {
+    "title": "Featured Portfolio",
+    "description": "Discover some of our most successful events and projects.",
+    "viewAll": "View All Portfolio"
+  },
+  "cta": {
+    "title": "Have an idea brewing?",
+    "description": "Let's plan your next event together.",
+    "contact": "Contact Us",
+    "knowMore": "Know More"
+  }
+}

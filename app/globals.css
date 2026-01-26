@@ -1,0 +1,112 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+:root {
+  --bg: #ffffff;
+  --fg: #0f172a; /* slate-900 */
+}
+
+html, body { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  background-image: radial-gradient(3000px 1800px at 15% -20%, #FFFDD0 0%, transparent 70%),
+    radial-gradient(2800px 1600px at 110% -10%, #E3E4FA 0%, transparent 65%),
+    radial-gradient(2600px 1600px at -15% 120%, #FDD5B1 0%, transparent 70%),
+    radial-gradient(2700px 1600px at 120% 110%, #AAF0D1 0%, transparent 75%),
+    radial-gradient(3500px 2000px at 50% 50%, rgba(255, 255, 255, 0.3) 0%, transparent 80%);
+  background-attachment: fixed;
+}
+
+/* Soft pastel gradient helper */
+.pastel-gradient {
+  background-image: radial-gradient(1500px 900px at 20% -10%, #FFFDD0 10%, transparent 50%),
+    radial-gradient(1200px 700px at 100% 0%, #E3E4FA 10%, transparent 40%),
+    radial-gradient(1000px 700px at 0% 100%, #FDD5B1 10%, transparent 40%),
+    radial-gradient(1100px 700px at 100% 100%, #AAF0D1 10%, transparent 50%);
+}
+
+.container-max { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
+.section { @apply py-16 sm:py-20; }
+.heading-1 { @apply text-4xl font-bold tracking-tight text-slate-800 sm:text-5xl; }
+.heading-2 { @apply text-3xl font-semibold text-slate-800 sm:text-4xl; }
+.subtle { @apply text-slate-600; }
+.btn { @apply inline-flex items-center justify-center rounded-xl bg-brand text-white px-5 py-3 font-semibold shadow-soft transition hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-300; }
+.btn-outline { @apply inline-flex items-center justify-center rounded-xl border border-brand text-brand px-5 py-3 font-semibold hover:bg-brand/10; }
+.card { @apply rounded-2xl bg-white/80 backdrop-blur shadow-sm ring-1 ring-slate-200; }
+
+/* Scroll reveal animations */
+.reveal {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+section.reveal {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+.card {
+  opacity: 0;
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+section.reveal .card:nth-child(1) { animation-delay: 0.1s; animation: scaleIn 0.6s ease-out forwards; }
+section.reveal .card:nth-child(2) { animation-delay: 0.2s; animation: scaleIn 0.6s ease-out forwards; }
+section.reveal .card:nth-child(3) { animation-delay: 0.3s; animation: scaleIn 0.6s ease-out forwards; }
+section.reveal .card:nth-child(4) { animation-delay: 0.4s; animation: scaleIn 0.6s ease-out forwards; }
+section.reveal .card:nth-child(5) { animation-delay: 0.5s; animation: scaleIn 0.6s ease-out forwards; }
+section.reveal .card:nth-child(6) { animation-delay: 0.6s; animation: scaleIn 0.6s ease-out forwards; }
+
+.reveal h2 {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.reveal p {
+  animation: fadeInUp 0.6s ease-out 0.2s forwards;
+  opacity: 0;
+}
