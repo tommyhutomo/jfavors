@@ -3,17 +3,18 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 
-type MenuOption = 'workorder' | 'invoice' | 'receipt';
+type MenuOption = 'createevent' | 'eventsList' | 'invoice' | 'receipt' | 'workorder';
 
 const menuItems = [
-  { id: 'workorder', label: 'Create Work Order', url: 'https://www.google.com' },
-  { id: 'invoice', label: 'Create Invoice', url: 'https://www.yahoo.com' },
-  { id: 'receipt', label: 'Create Receipt', url: 'https://www.facebook.com' },
+  { id: 'eventsList', label: 'Events List', url: '/admin/events' },
+  { id: 'invoice', label: 'Invoice List', url: '/admin/invoice' },
+  { id: 'receipt', label: 'Receipt List', url: '/admin/receipt' },
+  { id: 'workorder', label: 'Workorder List', url: '/admin/workorder' },
 ];
 
 export default function AdminDashboard() {
   const router = useRouter();
-  const [activeMenu, setActiveMenu] = useState<MenuOption>('workorder');
+  const [activeMenu, setActiveMenu] = useState<MenuOption>('eventsList');
   const [isAuthorized, setIsAuthorized] = useState(false);
   const [loading, setLoading] = useState(true);
 
