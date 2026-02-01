@@ -1,11 +1,10 @@
-'use client';
-
-import { useSearchParams } from 'next/navigation';
 import EventForm from '@/components/EventForm';
 
-export default function CreateEventPage() {
-  const searchParams = useSearchParams();
-  const eventId = searchParams.get('id');
+type PageProps = {
+  searchParams: { id?: string };
+};
 
-  return <EventForm eventId={eventId || undefined} />;
+export default function CreateEventPage({ searchParams }: PageProps) {
+  const eventId = searchParams.id ?? undefined;
+  return <EventForm eventId={eventId} />;
 }
