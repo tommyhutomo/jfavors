@@ -1,11 +1,11 @@
-import EventForm from '@/components/EventForm';
+import InvoiceForm from '@/components/InvoiceForm';
 
 type PageProps = {
   searchParams: { id?: string };
 };
 
-export default function CreateEventPage({ searchParams }: PageProps) {
-  const eventId = searchParams.id ?? undefined;
-  return <EventForm eventId={eventId} />;
+export default function CreateInvoicePage({ searchParams }: PageProps) {
+  const invoiceId = searchParams.id ?? undefined;
+  return <InvoiceForm invoiceId={invoiceId} />;
 }
 

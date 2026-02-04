@@ -1,11 +1,10 @@
-import EventForm from '@/components/EventForm';
+import WorkOrderForm from '@/components/WorkOrderForm';
 
 type PageProps = {
   searchParams: { id?: string };
 };
 
 export default function CreateEventPage({ searchParams }: PageProps) {
-  const eventId = searchParams.id ?? undefined;
-  return <EventForm eventId={eventId} />;
+  const woId = searchParams.id ?? undefined;
+  return <WorkOrderForm woId={woId} />;
 }
-
