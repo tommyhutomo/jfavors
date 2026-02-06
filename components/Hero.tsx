@@ -26,8 +26,7 @@ export function Hero() {
           </h1>
           <p className="text-white mt-6 max-w-xl text-lg">{t('hero.description')}</p>
           <div className="mt-10 flex gap-4">
-            <Link href="/contact" className="btn">{t('hero.cta1')}</Link>
-            <Link href="/services" className="btn-outline">{t('hero.cta2')}</Link>
+            <Link href="https://linktr.ee/jfavors.eo" className="btn">{t('hero.cta1')}</Link>
           </div>
         </div>
       </div>
