@@ -37,3 +37,7 @@ pnpm-debug.log*
 .idea/ 
 *.suo
 *.ntvs*
+/app/generated/prisma
+
+.vercel
+.env*.local

@@ -1,0 +1,193 @@
+// schema.prisma
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // change if you use another RDBMS
+}
+
+model Customer {
+  customerNo String   @id @db.VarChar(32) @map("customer_no")
+  fullName   String   @db.VarChar(200)    @map("full_name")
+  dob        DateTime? @db.Date
+  gender     String?  @db.Char(1)         // CHECK ('M','F') in DB
+  address    String?  @db.VarChar(400)
+  phone      String?  @db.VarChar(40)
+  email      String?  @unique @db.VarChar(200)
+
+  events     Event[]
+
+  @@map("tbl-master-customer")
+}
+
+model Service {
+  servicesNo   String  @id @db.VarChar(32) @map("services_no")
+  servicesName String  @db.VarChar(200)    @map("services_name")
+  status       String  @db.VarChar(20)     // CHECK ('active','inactive')
+
+  packages      Package[]
+  eventServices EventService[]
+  invoiceLines  InvoiceLine[]
+
+  @@map("tbl-master-services")
+}
+
+model Package {
+  packageNo   String  @id @db.VarChar(32) @map("package_no")
+  servicesNo  String  @db.VarChar(32)     @map("services_no")
+  description String? @db.VarChar(400)
+  amount      Decimal @db.Decimal(12, 2)
+  status      String  @db.VarChar(20)     // CHECK ('active','inactive')
+
+  service       Service    @relation(fields: [servicesNo], references: [servicesNo])
+  bundleItems   BundleItem[]
+  eventPackages EventPackage[]
+  invoiceLines  InvoiceLine[]
+
+  @@map("tbl-master-package")
+}
+
+model Bundle {
+  bundleId   String   @id @db.VarChar(32) @map("bundle_id")
+  bundleName String   @db.VarChar(200)    @map("bundle_name")
+  description String? @db.VarChar(400)
+  amount      Decimal? @db.Decimal(12, 2)
+  status      String   @db.VarChar(20)    // CHECK ('active','inactive')
+
+  items        BundleItem[]
+  eventBundles EventBundle[]
+  invoiceLines InvoiceLine[]
+
+  @@map("tbl-master-bundle")
+}
+
+model BundleItem {
+  bundleId String  @db.VarChar(32) @map("bundle_id")
+  packageNo String @db.VarChar(32) @map("package_no")
+  qty      Decimal @default(1) @db.Decimal(10, 2) // CHECK qty > 0
+
+  bundle  Bundle  @relation(fields: [bundleId], references: [bundleId])
+  package Package @relation(fields: [packageNo], references: [packageNo])
+
+  @@id([bundleId, packageNo])
+  @@map("tbl-master-bundle-item")
+}
+
+model Event {
+  eventNo       String   @id @db.VarChar(32) @map("event_no")
+  customerNo    String   @db.VarChar(32)     @map("customer_no")
+  eventName     String   @db.VarChar(200)    @map("event_name")
+  eventDate     DateTime @db.Date            @map("event_date")
+  venueName     String?  @db.VarChar(200)    @map("venue_name")
+  venueAddress  String?  @db.VarChar(400)    @map("venue_address")
+  status        String   @default("draft") @db.VarChar(20) // CHECK ('draft','confirmed','completed','cancelled')
+
+  customer      Customer      @relation(fields: [customerNo], references: [customerNo])
+  eventServices EventService[]
+  eventPackages EventPackage[]
+  eventBundles  EventBundle[]
+  workOrders    WorkOrder[]
+  invoices      Invoice[]
+
+  @@index([customerNo]) // optional index in your notes
+  @@map("tbl-event")
+}
+
+model EventService {
+  eventNo    String  @db.VarChar(32) @map("event_no")
+  servicesNo String  @db.VarChar(32) @map("services_no")
+  description String? @db.VarChar(400)
+  amount      Decimal @db.Decimal(12, 2)   // CHECK amount >= 0
+  status      String  @default("active") @db.VarChar(20) // CHECK ('active','void')
+
+  event   Event   @relation(fields: [eventNo], references: [eventNo])
+  service Service @relation(fields: [servicesNo], references: [servicesNo])
+
+  @@id([eventNo, servicesNo])
+  @@map("tbl-event-services")
+}
+
+model EventPackage {
+  eventNo    String  @db.VarChar(32) @map("event_no")
+  packageNo  String  @db.VarChar(32) @map("package_no")
+  description String? @db.VarChar(400)
+  amount      Decimal @db.Decimal(12, 2)   // CHECK amount >= 0
+  status      String  @default("active") @db.VarChar(20) // CHECK ('active','void')
+
+  event   Event   @relation(fields: [eventNo], references: [eventNo])
+  package Package @relation(fields: [packageNo], references: [packageNo])
+
+  @@id([eventNo, packageNo])
+  @@map("tbl-event-package")
+}
+
+model EventBundle {
+  eventNo    String  @db.VarChar(32) @map("event_no")
+  bundleId   String  @db.VarChar(32) @map("bundle_id")
+  description String? @db.VarChar(400)
+  amount      Decimal? @db.Decimal(12, 2) // CHECK amount is null or >= 0
+  status      String   @default("active") @db.VarChar(20) // CHECK ('active','void')
+
+  event  Event  @relation(fields: [eventNo], references: [eventNo])
+  bundle Bundle @relation(fields: [bundleId], references: [bundleId])
+
+  @@id([eventNo, bundleId])
+  @@map("tbl-event-bundle")
+}
+
+model WorkOrder {
+  woNo    String  @id @db.VarChar(32) @map("wo_no")
+  eventNo String  @db.VarChar(32)     @map("event_no")
+  website String? @db.VarChar(200)
+
+  event Event @relation(fields: [eventNo], references: [eventNo])
+
+  @@map("tbl-work-order")
+}
+
+model Invoice {
+  invoiceNo   String   @id @db.VarChar(32) @map("invoice_no")
+  invoiceDate DateTime @db.Date            @map("invoice_date")
+  eventNo     String   @db.VarChar(32)     @map("event_no")
+  remarks     String?  @db.VarChar(400)
+
+  event    Event        @relation(fields: [eventNo], references: [eventNo])
+  lines    InvoiceLine[]
+  receipts Receipt[]
+
+  @@index([eventNo]) // optional index in your notes
+  @@map("tbl-invoice")
+}
+
+model InvoiceLine {
+  invoiceNo  String  @db.VarChar(32) @map("invoice_no")
+  lineNo     Int     @map("line_no")
+  lineType   String  @db.VarChar(20) @map("line_type") // CHECK in ('service','package','bundle','custom')
+  servicesNo String? @db.VarChar(32) @map("services_no")
+  packageNo  String? @db.VarChar(32) @map("package_no")
+  bundleId   String? @db.VarChar(32) @map("bundle_id")
+  description String  @db.VarChar(400)
+  qty         Decimal @default(1) @db.Decimal(10, 2) // CHECK > 0
+  amount      Decimal @db.Decimal(12, 2)             // CHECK >= 0
+
+  invoice Invoice @relation(fields: [invoiceNo], references: [invoiceNo])
+  service Service? @relation(fields: [servicesNo], references: [servicesNo])
+  package Package? @relation(fields: [packageNo], references: [packageNo])
+  bundle  Bundle?  @relation(fields: [bundleId],  references: [bundleId])
+
+  @@id([invoiceNo, lineNo])
+  @@map("tbl-invoice-line")
+}
+
+model Receipt {
+  receiptNo   String   @id @db.VarChar(32) @map("receipt_no")
+  receiptDate DateTime @db.Date            @map("receipt_date")
+  invoiceNo   String   @db.VarChar(32)     @map("invoice_no")
+  amount      Decimal  @db.Decimal(12, 2)  // CHECK > 0
+  remarks     String?  @db.VarChar(400)
+
+  invoice Invoice @relation(fields: [invoiceNo], references: [invoiceNo])
+
+  @@map("tbl-receipt")
+}
