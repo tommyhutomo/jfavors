@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 type MenuOption = 'createevent' | 'eventsList' | 'invoice' | 'receipt' | 'workorder';
 
 const menuItems = [
+  { id: 'master', label: 'Manage Masters', url: '/admin/masters' },
   { id: 'eventsList', label: 'Events List', url: '/admin/events' },
   { id: 'invoice', label: 'Invoice List', url: '/admin/invoice' },
   { id: 'receipt', label: 'Receipt List', url: '/admin/receipt' },

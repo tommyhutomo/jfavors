@@ -1,10 +1,12 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useScrollReveal } from '@/hooks/useScrollReveal';
+import { useLanguage } from '../context/LanguageContext';
 
 export function PortfolioCarousel() {
   const ref = useScrollReveal();
   const [currentIndex, setCurrentIndex] = useState(0);
+  const { t } = useLanguage();
 
   const portfolioItems = [
     {
@@ -72,9 +74,9 @@ export function PortfolioCarousel() {
 
   return (
     <section className="section container-max" ref={ref}>
-      <h2 className="heading-2 mb-2 text-center">Featured Portfolio</h2>
+      <h2 className="heading-2 mb-2 text-center">{t(`portfolio.title`)}</h2>
       <p className="text-center text-gray-600 mb-10 max-w-2xl mx-auto">
-        Discover some of our most successful events and projects.
+        {t(`portfolio.description`)}
       </p>
 
       <div className="relative">

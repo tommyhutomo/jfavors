@@ -191,3 +191,5 @@ model Receipt {
 
   @@map("tbl-receipt")
 }
+
+

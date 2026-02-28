@@ -8,29 +8,51 @@
   },
   "hero": {
     "brand": "JFavors",
-    "title": "Events that feel effortless and look unforgettable.",
-    "titleHighlight": "effortless",
-    "description": "From concept to execution—corporate events, exhibitions, product launches, team building, and large-scale activations.",
-    "cta1": "Get a Quote",
+    "title": "We Create ",
+    "titleHighlight": "You Celebrate.",
+    "description": "Mulai dari konsep hingga eksekusi, kami mengelola setiap tahapan acara korporat, pameran, peluncuran produk, program team-building, hingga aktivasi skala besar Anda. Tim kami memastikan perencanaan yang matang, desain kreatif, dan pelaksanaan di lokasi yang sempurna, mengubah visi Anda menjadi pengalaman yang berdampak, menarik, dan berkesan bagi setiap audiens.",
+    "cta1": "Hubungi Kami",
     "cta2": "Know More"
   },
   "features": {
-    "title": "Why choose us",
-    "knowMore": "Know More"
+    "title": "Bagaimana Kami Memberikan Perbedaan",
+    "knowMore": "Lebih Lanjut",
+    "item-1-title": "Kreatif",
+    "item-1-desc": "Kami menciptakan desain unik dan imajinatif yang mengubah acara biasa menjadi pengalaman yang tak terlupakan.",
+    "item-2-title": "Handal",
+    "item-2-desc": "Handal, tepat, dan profesional—menjamin acara yang lancar dan bebas stres setiap saat.",
+    "item-3-title": "Terjangkau",
+    "item-3-desc": "Perencanaan acara yang terjangkau dan berkualitasdengan harga transparan dan paket yang dapat disesuaikan.",
+    "item-4-title": "Berkesan",
+    "item-4-desc": "Acara yang berkesan dibuat dengan styling yang indah, koordinasi yang mulus, dan detail yang bermakna.",
+    "know-more": "Lebih Lanjut"
   },
   "services": {
     "title": "Services",
-    "knowMore": "Know More"
+    "knowMore": "Lebih Lanjut",
+    "item-1-title": "Pernikahan",
+    "item-1-desc": "Desain tema, styling dekorasi, koordinasi, pengalaman katering.",
+    "item-2-title": "Pelatihan",
+    "item-2-desc": "Workshop, sesi peningkatan keterampilan, fasilitasi, materi pembelajaran.",
+    "item-3-title": "Corporate Events",
+    "item-3-desc": "Townhall, gala dinner, konferensi, roadshow.",
+    "item-4-title": "Exhibitions",
+    "item-4-desc": "Desain & bangun booth, keterlibatan pengunjung, penangkapan prospek.",
+    "item-5-title": "Launcing Product",
+    "item-5-desc": "Konsep kreatif, run of show, staging media.",
+    "item-6-title": "Team Building",
+    "item-6-desc": "Offsite, permainan pengalaman, fasilitasi."
   },
   "portfolio": {
-    "title": "Featured Portfolio",
-    "description": "Discover some of our most successful events and projects.",
-    "viewAll": "View All Portfolio"
+    "title": "Portofolio Unggulan",
+    "description": "Temukan beberapa acara dan proyek kami yang paling sukses.",
+    "viewAll": "Lihat Semua Portofolio",
+    "know-more": "Lebih Lanjut"
   },
   "cta": {
-    "title": "Have an idea brewing?",
-    "description": "Let's plan your next event together.",
-    "contact": "Contact Us",
-    "knowMore": "Know More"
+    "title": "Punya ide yang sedang dipikirkan?",
+    "description": "Ayo merencanakan acara berikutnya bersama.",
+    "contact": "Hubungi Kami",
+    "knowMore": "Lebih Lanjut"
   }
 }

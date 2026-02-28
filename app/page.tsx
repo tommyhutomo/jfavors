@@ -1,5 +1,4 @@
 import { Hero } from '@/components/Hero';
-import { EventPackage } from '@/components/EventPackage';
 import { Features } from '@/components/Features';
 import { Services } from '@/components/Services';
 import { PortfolioCarousel } from '@/components/PortfolioCarousel';
@@ -10,9 +9,8 @@ export default function Home() {
     <div className="pastel-gradient">
       <Hero />
       <Features />
-      <EventPackage />
-      <PortfolioCarousel />
       <Services />
+      <PortfolioCarousel />
       <CTA />
     </div>
   );
