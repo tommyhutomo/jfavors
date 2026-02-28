@@ -3,7 +3,7 @@ import './globals.css';
 import { ClientLayout } from './ClientLayout';
 
 export const metadata: Metadata = {
-  title: 'JFavour – Events that feel effortless and look unforgettable',
+  title: 'JFavors – We create you celebrate',
   description: 'A pastel-themed events/agency template built with Next.js + Tailwind CSS',
 };
 

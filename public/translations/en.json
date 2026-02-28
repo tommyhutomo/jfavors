@@ -8,19 +8,40 @@
   },
   "hero": {
     "brand": "JFavors",
-    "title": "Events that feel effortless and look unforgettable.",
-    "titleHighlight": "effortless",
-    "description": "From concept to execution—corporate events, exhibitions, product launches, team building, and large-scale activations.",
-    "cta1": "Get a Quote",
+    "title": "We Create ",
+    "titleHighlight": "You Celebrate.",
+    "description": "From concept to execution, we manage every stage of your corporate events, exhibitions, product launches, team‑building programs, and large‑scale activations. Our team ensures seamless planning, creative design, and flawless on‑site delivery, transforming your vision into impactful, engaging, and memorable experiences for every audience.",
+    "cta1": "Contact Us",
     "cta2": "Know More"
   },
   "features": {
-    "title": "Why choose us",
-    "knowMore": "Know More"
+    "title": "How We Make a Difference",
+    "knowMore": "Know More",
+    "item-1-title": "Creative",
+    "item-1-desc": "We create unique, imaginative designs that transform ordinary events into unforgettable experiences.",
+    "item-2-title": "Reliable",
+    "item-2-desc": "Reliable, precise, and professional—ensuring smooth, stress‑free events every time.",
+    "item-3-title": "Affordable",
+    "item-3-desc": "Affordable, high‑quality event planning with transparent pricing and customizable packages.",
+    "item-4-title": "Memorable",
+    "item-4-desc": "Memorable events crafted with beautiful styling, seamless coordination, and meaningful details.",
+    "know-more": "Know More"
   },
   "services": {
     "title": "Services",
-    "knowMore": "Know More"
+    "knowMore": "Know More",
+    "item-1-title": "Wedding",
+    "item-1-desc": "Theme design, décor styling, coordination, catering experience.",
+    "item-2-title": "Training",
+    "item-2-desc": "Workshops, skill‑building sessions, facilitation, learning materials.",
+    "item-3-title": "Corporate Events",
+    "item-3-desc": "Townhalls, gala dinners, conferences, roadshows.",
+    "item-4-title": "Exhibitions",
+    "item-4-desc": "Booth design & build, visitor engagement, prospect capture.",
+    "item-5-title": "Product Launches",
+    "item-5-desc": "Creative concept, run of show, media staging.",
+    "item-6-title": "Team Building",
+    "item-6-desc": "Offsite, experiential games, facilitation."
   },
   "portfolio": {
     "title": "Featured Portfolio",

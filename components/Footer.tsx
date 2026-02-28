@@ -5,7 +5,7 @@ export function Footer() {
         <div>
           <div className="flex items-center gap-2 font-semibold text-slate-800">
             <img src="/logo.svg" alt="Logo" className="h-8 w-8" />
-            <span>JFavour</span>
+            <span>JFavors</span>
           </div>
           <p className="subtle mt-4 max-w-sm">We craft corporate events, exhibitions, product launches, team building, and large-scale activations.</p>
         </div>
@@ -15,15 +15,14 @@ export function Footer() {
             <li><a className="hover:text-brand" href="/about">About</a></li>
             <li><a className="hover:text-brand" href="/services">Services</a></li>
             <li><a className="hover:text-brand" href="/portfolio">Portfolio</a></li>
-            <li><a className="hover:text-brand" href="/contact">Contact</a></li>
           </ul>
         </div>
         <div>
           <h4 className="font-semibold text-slate-800">Contact</h4>
           <ul className="mt-3 space-y-2 text-slate-600">
-            <li>+60 12 345 6789</li>
-            <li>hello@yourevents.co</li>
-            <li>Your Office Address, City</li>
+            <li>+62 851-7783-8703</li>
+            <li>jfavors.eo@gmail.com</li>
+            <li>59, Jalan Teuku Umar, Special Capital Region of Jakarta, 10310, Indonesia</li>
           </ul>
         </div>
       </div>
