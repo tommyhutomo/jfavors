@@ -22,13 +22,13 @@ export function Footer() {
           <ul className="mt-3 space-y-2 text-slate-600">
             <li>+62 851-7783-8703</li>
             <li>jfavors.eo@gmail.com</li>
-            <li>59, Jalan Teuku Umar, Special Capital Region of Jakarta, 10310, Indonesia</li>
+            <li>Jln Harapan II No.21, Rt:004, Rw:010, Kelurahan:Cipinang Melayu, Kecamatan: Makasar, Jakarta Timur, DKI Jakarta</li>
           </ul>
         </div>
       </div>
       <div className="border-t border-slate-200/70">
         <div className="container-max py-4 text-sm text-slate-500 flex justify-between">
-          <span>© {new Date().getFullYear()} JFavour</span>
+          <span>© {new Date().getFullYear()} JFavors</span>
           <span>Built with heart and coffee</span>
         </div>
       </div>
